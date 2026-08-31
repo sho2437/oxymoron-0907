@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>その生成AI、「効率化」だけに使っていませんか。｜語りの骨格</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#272727;
+  --gray:#D9D9D9;
+  --bg:#FFFFFF;
+  --serif:"Hina Mincho",serif;
+  --sans:"Zen Kaku Gothic Antique",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--black);
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:16px;
+  line-height:1.93;
+  letter-spacing:.05em;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:668px;margin:0 auto;padding:0 28px}
+
+.hero{padding:140px 0 110px}
+.hero .eyebrow{font-size:12px;letter-spacing:.22em;line-height:2;padding-bottom:38px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1.62;letter-spacing:.03em}
+.hero .sub{font-family:var(--serif);font-size:17px;line-height:2;letter-spacing:.04em;padding-top:26px}
+.hero .meta{font-size:12px;letter-spacing:.16em;line-height:2.2;padding-top:56px;border-top:1px solid var(--gray);margin-top:60px}
+
+.rule{border-top:1px solid var(--gray);margin:0}
+section{padding:78px 0}
+.part{font-size:11px;letter-spacing:.3em;padding:64px 0 0}
+.part span{display:inline-block;border-bottom:2px solid var(--black);padding-bottom:9px}
+.num{font-family:var(--serif);font-size:46px;line-height:1;letter-spacing:.02em;padding-bottom:20px}
+h2{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.75;letter-spacing:.04em;padding-bottom:30px}
+p{padding-bottom:22px}
+p:last-child{padding-bottom:0}
+strong{font-weight:700}
+.lead{font-size:17px}
+
+.scene{border-left:1px solid var(--gray);padding:4px 0 4px 24px;margin:0 0 26px;font-size:15px;line-height:2.1}
+.scene div{padding-bottom:2px}
+
+.invert{background:var(--black);color:var(--bg);padding:44px 34px;margin:34px 0}
+.invert .t{font-family:var(--serif);font-size:22px;line-height:1.85;letter-spacing:.04em}
+.invert .t.sm{font-size:19px}
+.invert .n{font-size:13px;line-height:2;padding-top:20px;border-top:1px solid rgba(255,255,255,.28);margin-top:22px}
+
+.voice{font-family:var(--serif);font-size:20px;line-height:1.9;letter-spacing:.04em;border-top:1px solid var(--gray);border-bottom:1px solid var(--gray);padding:24px 0;margin:30px 0}
+.voice .lab{font-family:var(--sans);font-size:11px;letter-spacing:.24em;padding-bottom:10px}
+
+.flow{display:flex;flex-wrap:wrap;gap:0;margin:30px 0;border-top:1px solid var(--gray);border-bottom:1px solid var(--gray)}
+.flow div{flex:1;min-width:80px;padding:20px 8px;text-align:center;font-family:var(--serif);font-size:15px;letter-spacing:.04em;border-right:1px solid var(--gray)}
+.flow div:last-child{border-right:none}
+.flow div.on{background:var(--black);color:var(--bg)}
+
+table{width:100%;border-collapse:collapse;margin:28px 0;font-size:14px;line-height:1.85}
+th,td{text-align:left;vertical-align:top;padding:16px 14px 16px 0;border-bottom:1px solid var(--gray)}
+th{font-weight:700;border-bottom:2px solid var(--black);font-size:12px;letter-spacing:.14em}
+td:last-child,th:last-child{padding-right:0}
+
+ul{list-style:none;padding:6px 0 22px}
+ul li{padding:0 0 10px 20px;position:relative}
+ul li:before{content:"";position:absolute;left:0;top:15px;width:8px;height:1px;background:var(--black)}
+
+.q{border-top:1px solid var(--gray);padding:26px 0}
+.q:last-of-type{border-bottom:1px solid var(--gray)}
+.q .qn{font-size:11px;letter-spacing:.26em;padding-bottom:10px}
+.q .qt{font-family:var(--serif);font-size:19px;line-height:1.8;letter-spacing:.03em;padding-bottom:12px}
+.q .qw{font-size:14px;line-height:1.95}
+
+footer{padding:90px 0 120px;border-top:1px solid var(--gray);margin-top:20px}
+footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing:.06em}
+
+@media(max-width:768px){
+  body{font-size:15px}
+  .wrap{padding:0 22px}
+  .hero{padding:100px 0 80px}
+  .hero h1{font-size:28px}
+  section{padding:60px 0}
+  h2{font-size:22px}
+  .num{font-size:38px}
+  .invert{padding:34px 24px}
+  .invert .t{font-size:19px}
+  .voice{font-size:17px}
+  table{font-size:13px}
+  .flow div{font-size:13px;padding:14px 4px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<div class="hero">
+  <div class="eyebrow">OXYMORON ／ 語りの骨格　<a href="./" style="color:inherit">&#9656; スライド版</a></div>
+  <h1>その生成AI、<br>「効率化」だけに<br>使っていませんか。</h1>
+  <div class="sub">組織で「自分たちの答え」を生み出す使い方を、<br>複雑系研究30年・田原真人と考える。</div>
+  <div class="meta">
+    2026年9月7日（月）19:00–20:00 ／ オンライン<br>
+    岸本渉（Oxymoron 代表）　田原真人<br>
+    ——　この資料は、当日話すことの骨格です。
+  </div>
+</div>
+</div>
+
+<hr class="rule">
+
+<div class="wrap"><div class="part"><span>前半　問題意識</span></div></div>
+
+<div class="wrap">
+<section>
+  <div class="num">01</div>
+  <h2>会議室で、こうなる。</h2>
+  <div class="scene">
+    <div>Aさん「スピードが大事」</div>
+    <div>Bさん「品質を担保しないと」</div>
+    <div>Cさん「そもそも顧客が求めてるのは違うのでは」</div>
+    <div>Dさん「経営から今期中に数字を出せと言われている」</div>
+  </div>
+  <p>そして、たいていこう処理されていきます。優先順位をつける。あいだを取る。誰かが論点を整理する。</p>
+  <p>決まったことは、正しい。ただ、終わったあとに、少しだけ取りこぼした感じが残ることがあります。</p>
+  <p>本当はあそこで、誰も言っていなかった三つ目の答えが出てほしかったのかもしれません。</p>
+  <div class="invert">
+    <div class="t sm">創発を、定義してみると——<br><br>異なる文脈がつながって、<br>新しい意味が立ち上がること。</div>
+    <div class="n">誰かがすでに持っていた答えが出てくるのではなく、その場で、立ち上がってくるもの。</div>
+  </div>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <div class="num">02</div>
+  <h2>しかもこれ、いま求められている。</h2>
+  <p>既存事業だけでは、しんどい。現状維持では、難しい。だから新規事業をやろう、と言われる。そういう場面が増えているように思います。</p>
+  <p>探索と活用。成果と育成。利益と社会的意義。短期と長期。<br><strong>どちらも本当に大事なのに、同時には成り立たないもの</strong>の前で、決めなければならない。</p>
+  <p>つまりいま増えているのは、<strong>答えが決まっていない側の課題</strong>なのかもしれません。</p>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <div class="num">03</div>
+  <h2>そこに、AIが来た。</h2>
+  <p>めちゃくちゃ速くなりました。議事録も、要約も、翻訳も。ホームページも作れるし、契約書のたたき台も出る。</p>
+  <p><strong>私自身、全部やっています。</strong>メールも返させるし、資料も作らせる。仕事のプロセスが、本当に速い。それはすごいことだと思っています。</p>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <div class="num">04</div>
+  <h2>でも、ずっと引っかかっていました。</h2>
+  <div class="invert">
+    <div class="t">効率化とは、<br>もう答えが決まっている作業を、<br>速くすること。</div>
+  </div>
+  <p>だとすると——組織のいちばん重たい課題は、<strong>答えが決まっていない側</strong>にあるような気がします。</p>
+  <p class="lead"><strong>なぜ、そちら側には使われないんだろう。</strong></p>
+  <p>正直に言うと、私にも答えは分かりきっていません。ただ、現場に立ってきて、三つ見えているものがあります。</p>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <div class="num">05</div>
+  <h2>ひとつめ　機能を、知らない。</h2>
+  <p>そもそもAIとは何か。大量の文章を読んで、<strong>「こう来たら、こう続くのが確からしい」</strong>を出す装置だと聞いています。</p>
+  <p>だから放っておくと、<strong>「よくある続き」</strong>のほうに落ちていく。なんとなくそうだよね、という方向に丸まっていく。</p>
+  <p>ただ、丸まる理由はAIの側だけにあるのではなく、<strong>こちらが投げている問いの側</strong>にもありそうです。</p>
+  <table>
+    <tr><th>投げている問い</th><th>答えはどこに</th><th>何が起きるか</th></tr>
+    <tr><td>共通点を出して</td><td>材料の中にある</td><td>探して、持ってくる<br><strong>丸まる</strong></td></tr>
+    <tr><td>要約して</td><td>材料の中にある</td><td>縮める<br><strong>丸まる</strong></td></tr>
+    <tr><td>A・B・Cは相反するけれど、全部を満たすとしたら、どうなる?</td><td><strong>材料の中に、ない</strong></td><td>作るしかない<br><strong>跳ぶ</strong></td></tr>
+  </table>
+  <p>「共通点」は、探せば見つかります。だから丸まる。</p>
+  <p>「A・B・C全部を満たす」は、どこにも書いてありません。いまの前提だと、ありえない。矛盾しているからです。<strong>そうすると、「それが成り立つとしたら、何が違うんだろう」を考えるしかなくなる。</strong></p>
+  <div class="invert">
+    <div class="t sm">満たせない制約を与えて、<br>答えを、材料の外に追い出す。</div>
+    <div class="n">——パースが、アブダクション（仮説の跳躍）と呼んだもの。<br>新しい観念をもたらす唯一の推論だ、と言っています。</div>
+  </div>
+  <p>同じAIに、同じ材料を入れて、<strong>問いだけを変えている。</strong>それだけで、丸まりもするし、跳びもする。</p>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <div class="num">06</div>
+  <h2>ふたつめ　予算が、そこにしかついていない。</h2>
+  <p>AIに予算がつくときの稟議には、何と書くか。たいてい<strong>工数削減</strong>だと思います。</p>
+  <p>創発と言った瞬間に、たぶんこうなる。</p>
+  <div class="scene">
+    <div>「で、いくら儲かるの?」</div>
+    <div>「ほんまかいな」</div>
+  </div>
+  <p>新規事業と同じで、<strong>目算が立たない。</strong>だから、通りにくい。</p>
+  <p>そう考えると——<strong>導入した瞬間に、もう方向が決まっている</strong>のかもしれません。誰かが間違った選択をしたというより、お金の出口が、そこにしかなかった。</p>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <div class="num">07</div>
+  <h2>みっつめ　AIが、場にいない。</h2>
+  <p>いまAIは、私のパソコンの中にいます。私とAI。あなたとAI。<strong>個人と個人のあいだで、閉じている。</strong></p>
+  <p><strong>AIが「場」に入ってくる、という感覚が、そもそもなかったんじゃないか。</strong></p>
+  <p>そして、場のほうはどうなっているか。</p>
+  <ul>
+    <li>文脈が、固まっている</li>
+    <li>声の強い人がいる</li>
+    <li>ランクの差がある</li>
+    <li>言えない。出せない</li>
+    <li>出しても、みんなで「うわっ」と何かが立ち上がる感じが、ない</li>
+  </ul>
+  <p>そして、たぶんこれが一番大きい気がしています。</p>
+  <div class="invert">
+    <div class="t">創発って、痛いんです。</div>
+    <div class="n">いつもだったら、バコバコ殴り合う。<br>そして、お互いに「しょうがない」で手打ちする。<br>——だから、開けないでおく。</div>
+  </div>
+  <p>効率化のほうは、痛くない。だから通りやすいのかもしれません。</p>
+  <p>矛盾が「資源」ではなく、「障害」に見えている。</p>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap"><div class="part"><span>後半　可能性</span></div></div>
+
+<div class="wrap">
+<section>
+  <div class="num">08</div>
+  <h2>でも、AIを場に置くと。</h2>
+  <p>意見が、個人の手を離れていきます。自分の主張ではなく、場に出された論点になる。</p>
+  <div class="voice">
+    <div class="lab">関わりの向きが変わる</div>
+    「あなた 対 私」から、<br>「私たち 対 このテーマ」へ。
+  </div>
+  <p><strong>いつもは痛かったことが、痛くなくなる。</strong></p>
+  <p>言いにくかった声が出る。その場にいない人——顧客、現場、若手、次の世代——を呼べる。「実は自分も迷っている」を、人にではなく、いったんAIに置ける。</p>
+  <p>——ここは、私の実感と仮説です。<strong>田原さん、現場では実際、どうですか。</strong></p>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <div class="num">09</div>
+  <h2>創発のプロセスの、どこに入れるか。</h2>
+  <p>新しいものが生まれるとき、場にはひとつの流れがあります。</p>
+  <div class="flow">
+    <div>安全の器</div>
+    <div>拡散</div>
+    <div>創発</div>
+    <div class="on">収束・決定</div>
+  </div>
+  <p>この流れ自体は、AIがなくても回ります。ただ、<strong>その一つひとつの局面に、AIが静かに効いてくる。</strong></p>
+  <p>たとえば創発の局面。AIにリサーチや別の文脈を入れると、自分たちだけでは出てこなかった視点が立ち上がる。しかも、ただ広げるだけでもありません。<strong>「こういう制約のなかで」と条件を渡すと、その枠のなかでアイデアがブラッシュアップされていく。</strong>広げることと、質を上げること。その両方を、同じ流れで行き来できる。</p>
+  <p class="lead"><strong>そして、いちばんの難所が、収束（意思決定）です。</strong></p>
+  <p>ここで起きてほしいのは、妥協とは少し違うものです。</p>
+  <table>
+    <tr><th>これではない　妥協・調整</th><th>めざすのは　含んで超える</th></tr>
+    <tr><td>多数決、声の大きい人に合わせる、足して二で割る。誰かの意見が<strong>削られて</strong>、我慢が残る。</td><td>反対の声も、その奥の<strong>「大切にしていること」ごと</strong>拾う。意見を消さず、<strong>含んだまま、もう一段上の案へ</strong>編み直す。</td></tr>
+  </table>
+  <p>ここでAIを<strong>一人のエージェント</strong>として対話に加えて、「この案を、みんなの懸念も活かしてもっと良くするには」と問いかけていく。すると、<strong>反対の奥にあった価値までもが拾われ、提案に取り込まれていく。</strong></p>
+  <p>声の大きさではなく、意見の“中身”で、決定が前へ進む。</p>
+  <div class="invert">
+    <div class="t">意見を消すのではなく、<br>含んで、超えていく。</div>
+    <div class="n">決定そのものが、一段ずつ高くなっていく。</div>
+  </div>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <div class="num">10</div>
+  <h2>そこまで来ると、何が残るか。</h2>
+  <div class="flow">
+    <div>安全の器</div>
+    <div>拡散</div>
+    <div>創発</div>
+    <div>収束・決定</div>
+    <div class="on">→ ここで残るもの</div>
+  </div>
+  <p>この流れを通り抜けたとき、最後に手元に残るのは、完璧な正解ではないかもしれません。</p>
+  <div class="voice">
+    <div class="lab">残るのは</div>
+    わかんないけど、<br>これなら、できそう。
+  </div>
+  <p>正解が出たわけではない。<strong>でも、ここまで来れば、動き出せる。</strong></p>
+  <p>自分たちで拡げて、自分たちでつなげて、自分たちで決めた。<strong>その感覚があるから、次の一歩が踏み出せる。</strong>——このプロセスが生むのは、答えというより、そこだと思っています。</p>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <h2>田原さんに、聞いてみたいこと。</h2>
+  <p>ここまで話してきたことは、実は<strong>田原さんに教わったところも多くあります。</strong>そのうえで、あらためて聞いてみたいことが四つあります。</p>
+
+  <div class="q">
+    <div class="qn">01</div>
+    <div class="qt">なぜ、AIは効率化のために使われているんでしょうか。</div>
+    <div class="qw">私からは三つ挙げてみましたが、田原さんの目には、どう映っていますか。</div>
+  </div>
+
+  <div class="q">
+    <div class="qn">02</div>
+    <div class="qt">AIが創発に使われる、というのは、どういうことですか。</div>
+    <div class="qw">実際の場で、何をどう置いているのか。手つきのところを聞かせてください。</div>
+  </div>
+
+  <div class="q">
+    <div class="qn">03</div>
+    <div class="qt">組織の側に、条件はありますか。</div>
+    <div class="qw">こういう組織だとうまくいきやすい、逆にこうだと難しい——そういう傾向があれば。</div>
+  </div>
+
+  <div class="q">
+    <div class="qn">04</div>
+    <div class="qt">実際に創発が起きたとき、何が起きていましたか。</div>
+    <div class="qw">その瞬間、場で何が動いたのか。具体的な話を聞かせていただけたら。</div>
+  </div>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <h2>この夜を、一文にすると。</h2>
+  <div class="invert">
+    <div class="t">同じ道具が、<br>轍を深める機械にも、<br>轍をゆるめる機械にもなる。</div>
+    <div class="n">分かれ目は、機能と、原理の理解。</div>
+  </div>
+  <p>そして、ここまで話してきたことは、<strong>聞いて分かることと、体で分かることが、はっきり別もの</strong>でした。</p>
+  <p>意見が外に出て、場の空気がすっと変わるあの瞬間は、体験して初めて、自分の手で使えるものになる。だから9月26日は、一日かけて、実際に手を動かす場にしています。</p>
+</section>
+</div>
+
+<footer>
+<div class="wrap">
+  <div class="f">
+    Oxymoron<br>
+    まだ名前のついていない物語が立ち上がる、共にある。<br>
+    <span style="font-size:11px;letter-spacing:.14em">Facilitating the emergence of unnamed narratives.</span>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>

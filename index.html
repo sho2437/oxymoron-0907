@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>その生成AI、「効率化」だけに使っていませんか。｜スライド</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#272727;
+  --gray:#D9D9D9;
+  --bg:#FFFFFF;
+  --serif:"Hina Mincho",serif;
+  --sans:"Zen Kaku Gothic Antique",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--bg);color:var(--black);
+  font-family:var(--sans);font-weight:500;
+  letter-spacing:.05em;line-height:1.93;
+  -webkit-font-smoothing:antialiased;
+}
+#stage{position:relative;width:100vw;height:100vh}
+.slide{
+  position:absolute;inset:0;
+  display:none;
+  padding:7vh 8vw 12vh;
+  overflow-y:auto;
+}
+.slide.active{display:flex;flex-direction:column;justify-content:center}
+.slide.dark{background:var(--black);color:var(--bg)}
+
+.kicker{font-size:clamp(10px,1.05vw,13px);letter-spacing:.3em;padding-bottom:3.2vh}
+.kicker span{border-bottom:1px solid currentColor;padding-bottom:7px}
+.n{font-family:var(--serif);font-size:clamp(30px,4.4vw,60px);line-height:1;padding-bottom:2.4vh}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.6vw,62px);line-height:1.55;letter-spacing:.03em}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(23px,3.5vw,46px);line-height:1.6;letter-spacing:.04em;padding-bottom:3.4vh}
+.big{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.7vw,50px);line-height:1.72;letter-spacing:.04em}
+.mid{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2.5vw,32px);line-height:1.8;letter-spacing:.04em}
+p{font-size:clamp(14px,1.35vw,19px);padding-bottom:1.7vh;max-width:44em}
+p:last-child{padding-bottom:0}
+strong{font-weight:700}
+.note{font-size:clamp(12px,1.1vw,15px);line-height:2;padding-top:2.4vh;margin-top:2.4vh;border-top:1px solid var(--gray);max-width:44em}
+.dark .note{border-top-color:rgba(255,255,255,.3)}
+.sub{font-family:var(--serif);font-size:clamp(14px,1.5vw,21px);line-height:2;padding-top:3vh}
+.meta{font-size:clamp(11px,1.05vw,14px);letter-spacing:.14em;line-height:2.1;padding-top:4vh;margin-top:4vh;border-top:1px solid var(--gray)}
+
+.scene{border-left:1px solid var(--gray);padding:2px 0 2px 22px;margin-bottom:2.4vh;font-size:clamp(14px,1.5vw,21px);line-height:2.15;font-family:var(--serif)}
+.dark .scene{border-left-color:rgba(255,255,255,.4)}
+
+ul{list-style:none}
+ul li{padding:0 0 1.1vh 22px;position:relative;font-size:clamp(14px,1.5vw,21px)}
+ul li:before{content:"";position:absolute;left:0;top:1.05em;width:9px;height:1px;background:currentColor}
+
+table{width:100%;max-width:60em;border-collapse:collapse;font-size:clamp(12px,1.2vw,17px);line-height:1.8;margin-top:1vh}
+th,td{text-align:left;vertical-align:top;padding:1.5vh 16px 1.5vh 0;border-bottom:1px solid var(--gray)}
+th{font-weight:700;border-bottom:2px solid var(--black);font-size:clamp(10px,1vw,13px);letter-spacing:.14em}
+.dark th{border-bottom-color:var(--bg)}
+.dark th,.dark td{border-bottom-color:rgba(255,255,255,.3)}
+td:last-child,th:last-child{padding-right:0}
+
+.flow{display:flex;border-top:1px solid var(--gray);border-bottom:1px solid var(--gray);margin:1vh 0 3vh;max-width:60em}
+.flow div{flex:1;padding:2.2vh 6px;text-align:center;font-family:var(--serif);font-size:clamp(13px,1.5vw,21px);border-right:1px solid var(--gray)}
+.flow div:last-child{border-right:none}
+.flow div.on{background:var(--black);color:var(--bg)}
+
+.q{border-top:1px solid var(--gray);padding:1.9vh 0}
+.q:last-of-type{border-bottom:1px solid var(--gray)}
+.q b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(16px,1.9vw,26px);line-height:1.7;padding-bottom:.5vh}
+.q span{font-size:clamp(12px,1.15vw,16px);line-height:1.9}
+
+/* --- UI --- */
+#bar{position:fixed;left:0;bottom:0;height:2px;background:var(--black);z-index:20;transition:width .25s ease}
+.dark ~ #bar{background:var(--black)}
+#pg{position:fixed;right:22px;bottom:16px;font-size:11px;letter-spacing:.2em;z-index:21;color:var(--black)}
+#pg.inv{color:var(--bg)}
+#nav{position:fixed;inset:0;z-index:10;display:flex}
+#nav div{flex:1;cursor:pointer}
+#hint{position:fixed;left:22px;bottom:16px;font-size:10px;letter-spacing:.18em;z-index:21;opacity:.5}
+#hint.inv{color:var(--bg)}
+
+@media(max-width:768px){
+  .slide{padding:6vh 7vw 12vh}
+  p{font-size:14px}
+}
+@media print{
+  html,body{height:auto;overflow:visible}
+  .slide{display:flex !important;flex-direction:column;justify-content:center;position:relative;inset:auto;height:100vh;page-break-after:always;border-bottom:1px solid var(--gray)}
+  #nav,#bar,#pg,#hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="stage">
+
+<!-- 01 表紙 -->
+<div class="slide active">
+  <div class="kicker"><span>OXYMORON</span></div>
+  <h1>その生成AI、<br>「効率化」だけに<br>使っていませんか。</h1>
+  <div class="sub">組織で「自分たちの答え」を生み出す使い方を、<br>複雑系研究30年・田原真人と考える。</div>
+  <div class="meta">2026年9月7日（月）19:00–20:00 ／ オンライン<br>岸本渉（Oxymoron 代表）　田原真人</div>
+</div>
+
+<!-- 02 -->
+<div class="slide">
+  <div class="kicker"><span>前半　問題意識</span></div>
+  <div class="n">01</div>
+  <h2>会議室で、こうなる。</h2>
+  <div class="scene">
+    Aさん「スピードが大事」<br>
+    Bさん「品質を担保しないと」<br>
+    Cさん「そもそも顧客が求めてるのは違うのでは」<br>
+    Dさん「経営から今期中に数字を出せと言われている」
+  </div>
+  <p>優先順位をつける。あいだを取る。誰かが論点を整理する。</p>
+  <p>決まったことは、正しい。ただ、少しだけ取りこぼした感じが残る。</p>
+</div>
+
+<!-- 03 -->
+<div class="slide dark">
+  <div class="kicker"><span>創発を、定義してみると</span></div>
+  <div class="big">異なる文脈がつながって、<br>新しい意味が立ち上がること。</div>
+  <div class="note">誰かがすでに持っていた答えが出てくるのではなく、<br>その場で、立ち上がってくるもの。</div>
+</div>
+
+<!-- 04 -->
+<div class="slide">
+  <div class="n">02</div>
+  <h2>しかもこれ、いま求められている。</h2>
+  <p>既存事業だけでは、しんどい。現状維持では、難しい。だから新規事業をやろう、と言われる。</p>
+  <div class="mid" style="padding:2.4vh 0">探索と活用。成果と育成。<br>利益と社会的意義。短期と長期。</div>
+  <p><strong>どちらも本当に大事なのに、同時には成り立たないもの</strong>の前で、決めなければならない。</p>
+  <p>いま増えているのは、<strong>答えが決まっていない側の課題</strong>なのかもしれません。</p>
+</div>
+
+<!-- 05 -->
+<div class="slide">
+  <div class="n">03</div>
+  <h2>そこに、AIが来た。</h2>
+  <p>めちゃくちゃ速くなりました。議事録も、要約も、翻訳も。ホームページも作れるし、契約書のたたき台も出る。</p>
+  <p><strong>私自身、全部やっています。</strong>メールも返させるし、資料も作らせる。仕事のプロセスが、本当に速い。それはすごいことだと思っています。</p>
+</div>
+
+<!-- 06 -->
+<div class="slide dark">
+  <div class="n" style="opacity:.55">04</div>
+  <div class="big">効率化とは、<br>もう答えが決まっている作業を、<br>速くすること。</div>
+  <div class="note">だとすると——組織のいちばん重たい課題は、<strong>答えが決まっていない側</strong>にあるような気がします。</div>
+</div>
+
+<!-- 07 -->
+<div class="slide">
+  <h2>なぜ、そちら側には<br>使われないんだろう。</h2>
+  <p>正直に言うと、私にも答えは分かりきっていません。</p>
+  <p>ただ、現場に立ってきて、三つ見えているものがあります。</p>
+</div>
+
+<!-- 08 -->
+<div class="slide">
+  <div class="n">05</div>
+  <h2>ひとつめ　機能を、知らない。</h2>
+  <p>AIとは何か。大量の文章を読んで、<strong>「こう来たら、こう続くのが確からしい」</strong>を出す装置だと聞いています。</p>
+  <p>だから放っておくと、<strong>「よくある続き」</strong>のほうに落ちていく。</p>
+  <p>ただ、丸まる理由はAIの側だけにあるのではなく、<strong>こちらが投げている問いの側</strong>にもありそうです。</p>
+</div>
+
+<!-- 09 -->
+<div class="slide">
+  <table>
+    <tr><th>投げている問い</th><th>答えはどこに</th><th>何が起きるか</th></tr>
+    <tr><td>共通点を出して</td><td>材料の中にある</td><td>探して、持ってくる<br><strong>丸まる</strong></td></tr>
+    <tr><td>要約して</td><td>材料の中にある</td><td>縮める<br><strong>丸まる</strong></td></tr>
+    <tr><td>A・B・Cは相反するけれど、<br>全部を満たすとしたら?</td><td><strong>材料の中に、ない</strong></td><td>作るしかない<br><strong>跳ぶ</strong></td></tr>
+  </table>
+  <div class="note">同じAIに、同じ材料を入れて、<strong>問いだけを変えている。</strong></div>
+</div>
+
+<!-- 10 -->
+<div class="slide dark">
+  <div class="big">満たせない制約を与えて、<br>答えを、材料の外に追い出す。</div>
+  <div class="note">——パースが、アブダクション（仮説の跳躍）と呼んだもの。<br>新しい観念をもたらす唯一の推論だ、と言っています。</div>
+</div>
+
+<!-- 11 -->
+<div class="slide">
+  <div class="n">06</div>
+  <h2>ふたつめ　予算が、<br>そこにしかついていない。</h2>
+  <p>AIに予算がつくときの稟議には、何と書くか。たいてい<strong>工数削減</strong>だと思います。</p>
+  <div class="scene">「で、いくら儲かるの?」<br>「ほんまかいな」</div>
+  <p>新規事業と同じで、<strong>目算が立たない。</strong>だから、通りにくい。</p>
+  <p><strong>導入した瞬間に、もう方向が決まっている</strong>のかもしれません。</p>
+</div>
+
+<!-- 12 -->
+<div class="slide">
+  <div class="n">07</div>
+  <h2>みっつめ　AIが、場にいない。</h2>
+  <p>いまAIは、私のパソコンの中にいます。私とAI。あなたとAI。<strong>個人と個人のあいだで、閉じている。</strong></p>
+  <p><strong>AIが「場」に入ってくる、という感覚が、そもそもなかったんじゃないか。</strong></p>
+  <ul>
+    <li>文脈が、固まっている</li>
+    <li>声の強い人がいる／ランクの差がある</li>
+    <li>言えない。出せない</li>
+    <li>出しても、みんなで「うわっ」と立ち上がる感じが、ない</li>
+  </ul>
+</div>
+
+<!-- 13 -->
+<div class="slide dark">
+  <div class="big">創発って、痛いんです。</div>
+  <div class="note">いつもだったら、バコバコ殴り合う。<br>そして、お互いに「しょうがない」で手打ちする。<br>——だから、開けないでおく。<br><br>効率化のほうは、痛くない。だから通りやすいのかもしれません。</div>
+</div>
+
+<!-- 14 -->
+<div class="slide">
+  <div class="kicker"><span>後半　可能性</span></div>
+  <div class="n">08</div>
+  <h2>でも、AIを場に置くと。</h2>
+  <p>意見が、個人の手を離れていきます。自分の主張ではなく、場に出された論点になる。</p>
+  <div class="mid" style="padding:2vh 0">「あなた 対 私」から、<br>「私たち 対 このテーマ」へ。</div>
+  <p><strong>いつもは痛かったことが、痛くなくなる。</strong></p>
+</div>
+
+<!-- 15 -->
+<div class="slide">
+  <div class="n">09</div>
+  <h2>創発のプロセスの、<br>どこに入れるか。</h2>
+  <div class="flow">
+    <div>安全の器</div><div>拡散</div><div>創発</div><div class="on">収束・決定</div>
+  </div>
+  <p>この流れ自体は、AIがなくても回ります。ただ、<strong>その一つひとつの局面に、AIが静かに効いてくる。</strong></p>
+  <p>創発の局面では、「こういう制約のなかで」と条件を渡すと、その枠のなかでアイデアがブラッシュアップされていく。</p>
+</div>
+
+<!-- 16 -->
+<div class="slide">
+  <h2>いちばんの難所が、<br>収束（意思決定）。</h2>
+  <table>
+    <tr><th>これではない　妥協・調整</th><th>めざすのは　含んで超える</th></tr>
+    <tr><td>多数決、声の大きい人に合わせる、足して二で割る。誰かの意見が<strong>削られて</strong>、我慢が残る。</td><td>反対の声も、その奥の<strong>「大切にしていること」ごと</strong>拾う。意見を消さず、<strong>含んだまま、もう一段上の案へ</strong>編み直す。</td></tr>
+  </table>
+  <div class="note">AIを<strong>一人のエージェント</strong>として加えて、「この案を、みんなの懸念も活かしてもっと良くするには」と問いかけていく。<br>声の大きさではなく、意見の“中身”で、決定が前へ進む。</div>
+</div>
+
+<!-- 17 -->
+<div class="slide dark">
+  <div class="big">意見を消すのではなく、<br>含んで、超えていく。</div>
+  <div class="note">決定そのものが、一段ずつ高くなっていく。</div>
+</div>
+
+<!-- 18 -->
+<div class="slide">
+  <div class="n">10</div>
+  <h2>そこまで来ると、何が残るか。</h2>
+  <div class="flow">
+    <div>安全の器</div><div>拡散</div><div>創発</div><div>収束・決定</div><div class="on">残るもの</div>
+  </div>
+  <p>この流れを通り抜けたとき、最後に手元に残るのは、完璧な正解ではないかもしれません。</p>
+  <div class="big" style="padding:1.6vh 0">わかんないけど、<br>これなら、できそう。</div>
+  <p>正解が出たわけではない。<strong>でも、ここまで来れば、動き出せる。</strong></p>
+  <p>自分たちで拡げて、自分たちでつなげて、自分たちで決めた。<strong>その感覚があるから、次の一歩が踏み出せる。</strong></p>
+</div>
+
+<!-- 19 -->
+<div class="slide">
+  <h2>田原さんに、<br>聞いてみたいこと。</h2>
+  <p>ここまで話してきたことは、実は<strong>田原さんに教わったところも多くあります。</strong></p>
+  <div class="q"><b>01　なぜ、AIは効率化のために使われているんでしょうか。</b><span>私からは三つ挙げてみましたが、田原さんの目には、どう映っていますか。</span></div>
+  <div class="q"><b>02　AIが創発に使われる、というのはどういうことですか。</b><span>実際の場で、何をどう置いているのか。</span></div>
+  <div class="q"><b>03　組織の側に、条件はありますか。</b><span>うまくいきやすい組織、難しい組織の傾向があれば。</span></div>
+  <div class="q"><b>04　実際に創発が起きたとき、何が起きていましたか。</b><span>その瞬間、場で何が動いたのか。</span></div>
+</div>
+
+<!-- 20 -->
+<div class="slide dark">
+  <div class="big">同じ道具が、<br>轍を深める機械にも、<br>轍をゆるめる機械にもなる。</div>
+  <div class="note">分かれ目は、機能と、原理の理解。</div>
+</div>
+
+<!-- 21 -->
+<div class="slide">
+  <h2>聞いて分かることと、<br>体で分かることは、<br>別ものでした。</h2>
+  <p>意見が外に出て、場の空気がすっと変わるあの瞬間は、体験して初めて、自分の手で使えるものになる。</p>
+  <p><strong>だから9月26日は、一日かけて、実際に手を動かす場にしています。</strong></p>
+  <div class="meta">Oxymoron<br>まだ名前のついていない物語が立ち上がる、共にある。<br><br><a href="reading.html" style="color:inherit">&#9656; 読み物版（スクロールで通して読む）</a></div>
+</div>
+
+</div>
+
+<div id="nav"><div id="prev"></div><div id="next"></div></div>
+<div id="bar"></div>
+<div id="pg"></div>
+<div id="hint">← → / SPACE ／ P で印刷</div>
+
+<script>
+(function(){
+  var s = document.querySelectorAll('.slide'), i = 0, n = s.length;
+  var bar = document.getElementById('bar'), pg = document.getElementById('pg'), hint = document.getElementById('hint');
+  function go(k){
+    i = Math.max(0, Math.min(n-1, k));
+    for (var j=0;j<n;j++) s[j].classList.toggle('active', j===i);
+    bar.style.width = ((i+1)/n*100) + '%';
+    pg.textContent = String(i+1).padStart(2,'0') + ' / ' + String(n).padStart(2,'0');
+    var dark = s[i].classList.contains('dark');
+    pg.classList.toggle('inv', dark);
+    hint.classList.toggle('inv', dark);
+    bar.style.background = dark ? '#D9D9D9' : '#272727';
+    try { history.replaceState(null,'','#'+(i+1)); } catch(e){}
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'||e.key==='ArrowDown'){ e.preventDefault(); go(i+1); }
+    if (e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='ArrowUp'){ e.preventDefault(); go(i-1); }
+    if (e.key==='Home'){ go(0); }
+    if (e.key==='End'){ go(n-1); }
+    if (e.key==='p'||e.key==='P'){ window.print(); }
+  });
+  document.getElementById('prev').addEventListener('click', function(){ go(i-1); });
+  document.getElementById('next').addEventListener('click', function(){ go(i+1); });
+  var x0=null;
+  document.addEventListener('touchstart', function(e){ x0=e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    if(x0===null) return;
+    var dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>50) go(dx<0 ? i+1 : i-1);
+    x0=null;
+  }, {passive:true});
+  var h = parseInt(location.hash.replace('#',''),10);
+  go(isNaN(h) ? 0 : h-1);
+})();
+</script>
+</body>
+</html>
