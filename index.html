@@ -73,6 +73,12 @@ td:last-child,th:last-child{padding-right:0}
 .q b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(16px,1.9vw,26px);line-height:1.7;padding-bottom:.5vh}
 .q span{font-size:clamp(12px,1.15vw,16px);line-height:1.9}
 
+.who{display:flex;gap:38px;align-items:flex-start;max-width:56em}
+.who img{width:clamp(120px,14vw,200px);aspect-ratio:1;object-fit:cover;flex:none;filter:grayscale(100%) contrast(1.03)}
+.who .body{flex:1;min-width:0}
+.who h2{padding-bottom:1.2vh}
+.who .role{font-family:var(--serif);font-size:clamp(14px,1.6vw,22px);line-height:1.8;padding-bottom:2.2vh}
+
 /* --- UI --- */
 #bar{position:fixed;left:0;bottom:0;height:2px;background:var(--black);z-index:20;transition:width .25s ease}
 .dark ~ #bar{background:var(--black)}
@@ -86,6 +92,7 @@ td:last-child,th:last-child{padding-right:0}
 
 @media(max-width:768px){
   .slide{padding:6vh 7vw 12vh}
+  .who{flex-direction:column;gap:20px}
   p{font-size:14px}
 }
 @media print{
@@ -107,9 +114,39 @@ td:last-child,th:last-child{padding-right:0}
   <div class="meta">2026年9月7日（月）19:00–20:00 ／ オンライン<br>岸本渉（Oxymoron 代表）　田原真人</div>
 </div>
 
+<!-- 02 自己紹介：岸本 -->
+<div class="slide">
+  <div class="kicker"><span>今日、話す二人</span></div>
+  <div class="who">
+    <img src="kishimoto.jpg" alt="岸本渉">
+    <div class="body">
+      <h2>岸本　渉</h2>
+      <div class="role">株式会社Oxymoron 代表</div>
+      <p>一橋大学を卒業後、博報堂、GU、ウィル・シードを経て、2025年にOxymoronを設立しました。立教大学大学院 経営学研究科 リーダーシップ開発コース（LDC）修了。理論と現場の両方に足を置く「アカデミック・プラクティショナー」でありたいと思っています。</p>
+      <p>いまは、個人の成長支援、チームコーチング、管理職どうしの対話、そして<strong>AIを組織の場に入れた対話の設計</strong>を仕事にしています。</p>
+      <div class="note"><strong>パラドックスを、創造の入口に変える。</strong><br>矛盾を抱えたまま進むなかから、まだ名前のない物語が立ち上がる。<br><br>oxymoron.works</div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 自己紹介：田原さん -->
+<div class="slide">
+  <div class="kicker"><span>今日、話す二人</span></div>
+  <div class="who">
+    <img src="tahara.jpg" alt="田原真人">
+    <div class="body">
+      <h2>田原　真人</h2>
+      <div class="role">複雑系研究者／ファシリテーター</div>
+      <p>1996年、細胞性粘菌の自己組織化を数学的に解析する修士論文を書かれて以来、<strong>30年一貫して「部分から秩序が立ち上がる仕組み」</strong>を研究されています。現在も博士課程に在籍。</p>
+      <p>並行して、オンラインでの対話の場づくりを20年以上。2017年に『Zoomオンライン革命!』を出版されました。近年は、<strong>AIを対話の場に入れた「創発AX」</strong>を、LPガス会社の事業転換や運送会社の全社プロセス再構築など、複数の企業で実装されています。</p>
+      <div class="note">物理学30年の研究と、企業での実装の両方から、<strong>「AI×対話から創発が生まれる仕組み」を原理として組み立ててきた人。</strong></div>
+    </div>
+  </div>
+</div>
+
 <!-- ===== 前半　問題意識　19:05–19:25 ===== -->
 
-<!-- 02 -->
+<!-- 04 -->
 <div class="slide">
   <div class="kicker"><span>前半　問題意識</span></div>
   <div class="n">01</div>
@@ -118,60 +155,70 @@ td:last-child,th:last-child{padding-right:0}
   <p><strong>私自身、全部やっています。</strong>メールも返させるし、資料も作らせる。仕事のプロセスが、本当に速くなりました。それはすごいことだと思っています。</p>
 </div>
 
-<!-- 03 -->
+<!-- 05 -->
 <div class="slide dark">
   <div class="big">効率化とは、<br>もう答えが決まっている作業を、<br>速くすること。</div>
   <div class="note">だとすると——組織のいちばん重たい課題は、<strong>答えが決まっていない側</strong>にあるような気がします。</div>
 </div>
 
-<!-- 04 -->
+<!-- 06 問いだけ -->
 <div class="slide">
-  <h2>なぜ、そちら側には<br>使われないんだろう。</h2>
-  <p>今日は、この問いに付き合っていただきたいと思っています。</p>
-</div>
-
-<!-- 05 -->
-<div class="slide dark">
   <div class="kicker"><span>前半　問題意識</span></div>
   <div class="n">02</div>
-  <h2>そもそも、創発って何だろう。</h2>
+  <h2>そもそも、<br>創発って何だろう。</h2>
+  <p>答えが決まっていない側で、組織がほしがっているもの。<strong>たぶんそれが「創発」と呼ばれているもの</strong>だと思います。</p>
+  <p>ただ、言葉としてはよく聞くけれど、何を指しているのか。まず、そこから。</p>
+</div>
+
+<!-- 07 定義 -->
+<div class="slide dark">
   <div class="big">異なる文脈がつながって、<br>新しい意味が立ち上がること。</div>
-  <div class="note">誰かがすでに持っていた答えが出てくるのではなく、その場で、立ち上がってくるもの。<br>会議で言えば、<strong>誰も言っていなかった三つ目の答えが出てくる</strong>ような瞬間。</div>
-</div>
-
-<!-- 06 ※時間が押したら短縮可 -->
-<div class="slide">
-  <div class="kicker"><span>前半　問題意識</span></div>
-  <div class="n">03</div>
-  <h2>しかもこれ、いま求められている。</h2>
-  <p>既存事業だけでは、しんどい。現状維持では、難しい。だから新規事業をやろう、と言われる。</p>
-  <div class="mid" style="padding:2.4vh 0">探索と活用。成果と育成。<br>利益と社会的意義。短期と長期。</div>
-  <p><strong>どちらも本当に大事なのに、同時には成り立たないもの</strong>の前で、決めなければならない。</p>
-  <p>いま増えているのは、<strong>答えが決まっていない側の課題</strong>なのかもしれません。</p>
-</div>
-
-<!-- 07 -->
-<div class="slide">
-  <div class="kicker"><span>前半　問題意識</span></div>
-  <div class="n">04</div>
-  <h2>では、あらためて。</h2>
-  <div class="mid" style="padding:2vh 0">なぜ、AIは創発のためには<br>使われないんだろう。</div>
-  <p>正直に言うと、私にも答えは分かりきっていません。</p>
-  <p>ただ、現場に立ってきて、三つ見えているものがあります。</p>
+  <div class="note">誰かがすでに持っていた答えが出てくるのではなく、その場で、立ち上がってくるもの。<br>会議で言えば、<strong>誰も言っていなかった三つ目の答えが出てくる</strong>——そこから<strong>新しい知恵が生まれてくる</strong>ような瞬間。</div>
 </div>
 
 <!-- 08 -->
 <div class="slide">
   <div class="kicker"><span>前半　問題意識</span></div>
+  <div class="n">03</div>
+  <h2>しかもこれ、いま求められている。</h2>
+  <p>既存事業だけでは、しんどい。現状維持では、難しい。だから新規事業をやろう、と言われる。</p>
+  <p>新規事業。イノベーション。変革。——言い方は違っても、求められているのは同じことなんじゃないかと思います。</p>
+  <div class="mid" style="padding:2vh 0">まだ無い知恵が、<br>自分たちの中から立ち上がってくること。</div>
+</div>
+
+<!-- 09 でも、難しい（パラドックス） -->
+<div class="slide">
+  <h2>でも、これが難しい。</h2>
+  <div class="mid" style="padding:1.6vh 0">探索と活用。成果と育成。<br>利益と社会的意義。短期と長期。</div>
+  <p>どちらも本当に大事なのに、同時には成り立たない。経営学では、こういう矛盾を<strong>パラドックス</strong>と呼びます。</p>
+  <p>ジレンマなら、選べば終わります。でも<strong>パラドックスは、選んでも終わらない。</strong>形を変えて、また戻ってくる。</p>
+  <p>だから本当は、どちらかを取るのではなく、<strong>両方を抱えたまま、まだ誰も見ていない三つ目を立ち上げるしかない。</strong>——つまり、創発が要る。</p>
+  <div class="note">それなのに、<strong>いちばん創発が起きてほしいこの場所が、いちばん創発が起きにくい。</strong><br><br>パラドックス理論（Smith &amp; Lewis, 2011）</div>
+</div>
+
+<!-- 10 -->
+<div class="slide">
+  <div class="kicker"><span>前半　問題意識</span></div>
+  <div class="n">04</div>
+  <h2>では、あらためて。</h2>
+  <div class="mid" style="padding:2vh 0">なぜ、AIは創発のためには<br>使われないんだろう。</div>
+  <p>効率化には、あれだけ使われている。<strong>答えが決まっていない側にこそ、いちばん使いでがありそうなのに。</strong></p>
+  <p>正直に言うと、私にも答えは分かりきっていません。現場に正解が転がっているわけでもない。</p>
+  <p>ただ、現場に立ってきたなかで、<strong>三つほど仮説が見えています。</strong></p>
+</div>
+
+<!-- 11 -->
+<div class="slide">
+  <div class="kicker"><span>前半　問題意識</span></div>
   <div class="n">05</div>
   <h2>ひとつめ　機能を、知らない。</h2>
-  <p>AIとは何か。大量の文章を読んで、<strong>「こう来たら、こう続くのが確からしい」</strong>を出す装置だと聞いています。</p>
+  <p>AIとは何か。大量の文章を読んで、<strong>「こう来たら、こう続くのが確からしい」を読みながら進んでいく装置</strong>だと聞いています。</p>
   <p>言いかえると、<strong>AIそのものが、巨大な轍（わだち）</strong>なのかもしれません。これまでに語られてきたことの、塊。</p>
-  <p>だから放っておくと、<strong>「よくある続き」</strong>——つまり轍のほうに、落ちていく。</p>
+  <p>だから放っておくと、<strong>「よくある続き」</strong>——つまり轍のほうへ、落ちていく。</p>
   <p>ただ、丸まる理由はAIの側だけにあるのではなく、<strong>こちらが投げている問いの側</strong>にもありそうです。</p>
 </div>
 
-<!-- 09 -->
+<!-- 12 -->
 <div class="slide">
   <table>
     <tr><th>投げている問い</th><th>答えはどこに</th><th>何が起きるか</th></tr>
@@ -182,13 +229,13 @@ td:last-child,th:last-child{padding-right:0}
   <div class="note">同じAIに、同じ材料を入れて、<strong>問いだけを変えている。</strong></div>
 </div>
 
-<!-- 10 -->
+<!-- 13 -->
 <div class="slide dark">
   <div class="big">満たせない制約を与えて、<br>答えを、材料の外に追い出す。</div>
-  <div class="note">——パースが、アブダクション（仮説の跳躍）と呼んだもの。<br>新しい観念をもたらす唯一の推論だ、と言っています。</div>
+  <div class="note">——パース（1903年 ハーバード講義）が、<strong>アブダクション</strong>（仮説の跳躍）と呼んだもの。<br>新しい観念をもたらす唯一の推論だ、と言っています。</div>
 </div>
 
-<!-- 11 -->
+<!-- 14 -->
 <div class="slide">
   <div class="kicker"><span>前半　問題意識</span></div>
   <div class="n">06</div>
@@ -199,7 +246,7 @@ td:last-child,th:last-child{padding-right:0}
   <p><strong>導入した瞬間に、もう方向が決まっている</strong>のかもしれません。</p>
 </div>
 
-<!-- 12 -->
+<!-- 15 -->
 <div class="slide">
   <div class="kicker"><span>前半　問題意識</span></div>
   <div class="n">07</div>
@@ -208,47 +255,54 @@ td:last-child,th:last-child{padding-right:0}
   <p><strong>AIが「場」に入ってくる、という感覚が、そもそもなかったんじゃないか。</strong></p>
 </div>
 
-<!-- 12b -->
+<!-- 15b -->
 <div class="slide">
   <h2>では、一人とAIでは、<br>創発は起きないのか。</h2>
   <p>起きます。私自身、AIと一対一で、まさにこういうことをやっています。<strong>今日お話ししている内容も、AIとの往復のなかで見えてきたものです。</strong></p>
-  <p>ただ、そこで立ち上がったのは <strong>「私の中の、新しさ」</strong>でした。</p>
+  <ul>
+    <li>文脈を重ねながら、「ここで<strong>見えていないもの</strong>があるとしたら、何だろう」と聞く</li>
+    <li>「自分のこの考えと、この部分を<strong>重ね合わせたら</strong>、何が立ち上がるか」を一緒に見る</li>
+    <li>自分の内側の感情に、<strong>内省的に付き合ってもらう</strong>。そこから「そうか」が出てくる</li>
+    <li>アイデアそのものを、一緒に練る</li>
+  </ul>
+  <div class="note">新しい知恵も、新しい視点も、たしかに出てきます。ただ——やっていることは、<strong>自分の中を掘っている</strong>、ということなのかもしれません。</div>
 </div>
 
-<!-- 12c -->
+<!-- 15c -->
 <div class="slide dark">
   <div class="big">組織で必要なのは、<br>その場にいる人たちの中から<br>立ち上がってくるもの。</div>
   <div class="note">誰か一人が持ち帰ってきた答えでは、たぶん、組織は動かない。</div>
 </div>
 
-<!-- 12d -->
+<!-- 15d -->
 <div class="slide">
   <h2>それに——</h2>
   <div class="mid" style="padding:1.6vh 0">組織の矛盾は、<br>複数の人がいて初めて、場に現れる。</div>
   <p>スピードを大事にする人。品質を守りたい人。顧客を見ている人。数字を背負っている人。</p>
-  <p><strong>一人の頭の中では、それはただのモヤモヤで終わってしまう。</strong></p>
-  <p>創発の材料になる矛盾は、<strong>人が集まったときにしか、テーブルの上に出てこない。</strong></p>
+  <p>しかも大事なのは、意見そのものより<strong>その裏側にあるストーリー</strong>のほうです。なぜその人がそこを大事にしているのか。どんな文脈で、そう言っているのか。</p>
+  <p><strong>一人の頭の中では、それはただのモヤモヤで終わってしまう。</strong>創発の材料になる矛盾は、<strong>人が集まったときにしか、テーブルの上に出てこない。</strong></p>
 </div>
 
-<!-- 12e ※時間が押したら短縮可 -->
+<!-- 15e ※時間が押したら短縮可 -->
 <div class="slide">
   <h2>そして、場のほうは<br>どうなっているか。</h2>
   <ul>
-    <li>文脈が、固まっている——「うちはこういう会社だから」という<strong>意味づけの轍</strong></li>
+    <li>文脈が、固まっている——「うちはこういう会社だから」。<strong>固まってしまった、語り方そのもの</strong></li>
     <li>声の強い人がいる／ランクの差がある</li>
     <li>言えない。出せない</li>
     <li>出しても、みんなで「うわっ」と立ち上がる感じが、ない</li>
   </ul>
+  <p>話を重ねて新しいものを作っていきたいのに、<strong>それ自体が起きづらい構造になっている。</strong></p>
   <div class="note">AIの轍と、組織の轍。<strong>私たちはいま、轍に轍を重ねているのかもしれません。</strong></div>
 </div>
 
-<!-- 13 -->
+<!-- 16 -->
 <div class="slide dark">
-  <div class="big">創発って、痛いんです。</div>
-  <div class="note">いつもだったら、バコバコ殴り合う。<br>そして、お互いに「しょうがない」で手打ちする。<br>——だから、開けないでおく。<br><br>効率化のほうは、痛くない。だから通りやすいのかもしれません。</div>
+  <div class="big">開けると、痛い。<br>だから結局、<br>落としどころに落ち着く。</div>
+  <div class="note">本当なら、けんけんがくがくやって、重ね合わせていきたい。<br>でも——ランクの強さがある。「言ってもしょうがない」がある。強い文脈を持った人が、勝っていく。<br>バチバチやったとしても、最後は「まあ、この辺で間を取りましょうか」に着地する。<br><br>効率化のほうは、痛くない。バシバシ進む。だから通りやすいのかもしれません。</div>
 </div>
 
-<!-- 13b 田原さんへ 問い01（前半の締め＝パス） -->
+<!-- 16b 田原さんへ 問01（前半の締め＝パス） -->
 <div class="slide">
   <div class="kicker"><span>田原さんへ</span></div>
   <h2>ここまでは、私の見立てです。</h2>
@@ -258,7 +312,7 @@ td:last-child,th:last-child{padding-right:0}
 
 <!-- ===== 後半　可能性　19:25–19:45 ===== -->
 
-<!-- 14 -->
+<!-- 17 -->
 <div class="slide">
   <div class="kicker"><span>後半　可能性</span></div>
   <div class="n">08</div>
@@ -268,14 +322,14 @@ td:last-child,th:last-child{padding-right:0}
   <p><strong>いつもは痛かったことが、痛くなくなる。</strong></p>
 </div>
 
-<!-- 14b 田原さんへ 問い02・03（後半の導入＝パス） -->
+<!-- 17b 田原さんへ 問02・03 -->
 <div class="slide">
   <div class="kicker"><span>田原さんへ</span></div>
   <div class="q"><b>02　AIが創発に使われる、というのはどういうことですか。</b><span>実際の場で、何をどう置いているのか。</span></div>
   <div class="q"><b>03　組織の側に、条件はありますか。</b><span>うまくいきやすい組織、難しい組織の傾向があれば。</span></div>
 </div>
 
-<!-- 15 -->
+<!-- 18 -->
 <div class="slide">
   <div class="kicker"><span>後半　可能性</span></div>
   <div class="n">09</div>
@@ -284,10 +338,20 @@ td:last-child,th:last-child{padding-right:0}
     <div>安全の器</div><div>拡散</div><div>創発</div><div>収束・決定</div>
   </div>
   <p>この流れ自体は、AIがなくても回ります。ただ、<strong>その一つひとつの局面に、AIが静かに効いてくる。</strong></p>
-  <p>創発の局面では、「こういう制約のなかで」と条件を渡すと、その枠のなかでアイデアがブラッシュアップされていく。</p>
 </div>
 
-<!-- 16 -->
+<!-- 18b 創発の局面 -->
+<div class="slide">
+  <h2>創発の局面で、<br>していること。</h2>
+  <div class="flow">
+    <div>安全の器</div><div>拡散</div><div class="on">創発</div><div>収束・決定</div>
+  </div>
+  <p>ひとつは、<strong>文脈を重ね合わせること。</strong>何を言ったかだけでなく、<strong>どういう文脈でそう言っているのか</strong>まで場に出して、積み重ねていく。そのうえで「これを重ね合わせたら、何が立ち上がってくるだろう」と問う。</p>
+  <p>もうひとつは、<strong>制約を入れること。</strong>「こういう状況で、こうなっている。それも超えるとしたら、どうなるか」——前半で話した、<strong>答えを材料の外に追い出す</strong>やり方です。</p>
+  <div class="note">文脈を重ねる。そこに、満たせない制約を入れる。<strong>この二つが揃うと、跳びやすくなる</strong>気がしています。</div>
+</div>
+
+<!-- 19 -->
 <div class="slide">
   <h2>いちばんの難所が、<br>収束（意思決定）。</h2>
   <div class="flow">
@@ -300,19 +364,19 @@ td:last-child,th:last-child{padding-right:0}
   <div class="note">AIを<strong>一人のエージェント</strong>として加えて、「この案を、みんなの懸念も活かしてもっと良くするには」と問いかけていく。<br>声の大きさではなく、意見の“中身”で、決定が前へ進む。</div>
 </div>
 
-<!-- 17 -->
+<!-- 20 -->
 <div class="slide dark">
   <div class="big">意見を消すのではなく、<br>含んで、超えていく。</div>
   <div class="note">決定そのものが、一段ずつ高くなっていく。</div>
 </div>
 
-<!-- 17b 田原さんへ 問い04（後半のクライマックス＝実例） -->
+<!-- 20b 田原さんへ 問04 -->
 <div class="slide">
   <div class="kicker"><span>田原さんへ</span></div>
   <div class="q"><b>04　実際に創発が起きたとき、何が起きていましたか。</b><span>その瞬間、場で何が動いたのか。</span></div>
 </div>
 
-<!-- 18 -->
+<!-- 21 -->
 <div class="slide">
   <div class="kicker"><span>後半　可能性</span></div>
   <div class="n">10</div>
@@ -326,22 +390,22 @@ td:last-child,th:last-child{padding-right:0}
   <p>自分たちで拡げて、自分たちでつなげて、自分たちで決めた。<strong>その感覚があるから、次の一歩が踏み出せる。</strong></p>
 </div>
 
-<!-- 18b 明日の持ち帰り（トレードオン） -->
+<!-- 21b 明日の持ち帰り（トレードオン） -->
 <div class="slide">
   <h2>明日、ひとつだけ<br>持ち帰るとしたら。</h2>
   <div class="big" style="padding:1.6vh 0">「これはトレードオフに見えるけれど、<br>トレードオンにするとしたら、<br>どうなるだろう」</div>
   <p>AもBも本当に大事だとしたら、まだ誰も見ていないCは、立ち上がらないか。</p>
   <p>AでもBでもなく、あいだを取るのでもなく。<strong>含んで、超える。</strong></p>
-  <div class="note">三つ渡すと、たぶん何も残らない。だから今日は、これひとつだけ。</div>
+  <div class="note">パラドックスは、選んでも終わらない。だったら、<strong>両方を抱えたまま進むための問い</strong>をひとつ持っておく。<br>三つ渡すと、たぶん何も残らない。だから今日は、これひとつだけ。</div>
 </div>
 
-<!-- 19 -->
+<!-- 22 -->
 <div class="slide dark">
   <div class="big">同じ道具が、<br>轍を深める機械にも、<br>轍をゆるめる機械にもなる。</div>
   <div class="note">分かれ目は、機能と、原理の理解。</div>
 </div>
 
-<!-- 19b 開いた問い（→19:45 参加者との対話へ） -->
+<!-- 22b 開いた問い（→19:45 参加者との対話へ） -->
 <div class="slide">
   <h2>ひとつ、開いたまま<br>持っている問いがあります。</h2>
   <div class="mid" style="padding:2vh 0">AIに渡せないものは、何なのか。</div>
@@ -349,13 +413,13 @@ td:last-child,th:last-child{padding-right:0}
   <p><strong>ただ、正直まだ分かりきっていません。</strong>ここからは、みなさんとも一緒に考えさせてください。</p>
 </div>
 
-<!-- 20 締め -->
+<!-- 23 締め -->
 <div class="slide">
   <h2>聞いて分かることと、<br>体で分かることは、<br>別ものでした。</h2>
   <p>意見が外に出て、場の空気がすっと変わるあの瞬間は、体験して初めて、自分の手で使えるものになる。</p>
   <p><strong>だから9月26日は、一日かけて、実際に手を動かす場にしています。</strong></p>
   <p>それともうひとつ。<strong>今日のこの対話も、終われば流れて消えていきます。</strong>9月26日は、対話を残して、そこからAIが知恵を引き出せる“器”を組むところまでやります。Obsidianという道具を使います。</p>
-  <div class="meta">Oxymoron<br>まだ名前のついていない物語が立ち上がる、共にある。<br><br><a href="reading.html" style="color:inherit">&#9656; 読み物版（スクロールで通して読む）</a></div>
+  <div class="meta">▸ <a href="https://sho2437.github.io/oxymoron-ws-lp/" target="_blank" rel="noopener" style="color:inherit">9月26日ワークショップの詳細・お申し込み</a><br><br>Oxymoron　まだ名前のついていない物語が立ち上がる、共にある。<br><a href="reading.html" style="color:inherit">▸ 読み物版（スクロールで通して読む）</a></div>
 </div>
 
 </div>
