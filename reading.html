@@ -42,10 +42,21 @@ section{padding:78px 0}
 .part span{display:inline-block;border-bottom:2px solid var(--black);padding-bottom:9px}
 .num{font-family:var(--serif);font-size:46px;line-height:1;letter-spacing:.02em;padding-bottom:20px}
 h2{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.75;letter-spacing:.04em;padding-bottom:30px}
+h3{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.8;letter-spacing:.04em;padding:16px 0 18px}
 p{padding-bottom:22px}
 p:last-child{padding-bottom:0}
 strong{font-weight:700}
 .lead{font-size:17px}
+.src{font-size:12px;letter-spacing:.08em;line-height:1.9;color:#6a6a6a;padding-top:6px}
+
+.who{display:flex;gap:26px;align-items:flex-start;padding-bottom:50px}
+.who:last-child{padding-bottom:0}
+.who img{width:128px;height:128px;object-fit:cover;flex:none;filter:grayscale(100%) contrast(1.03)}
+.who .b{flex:1;min-width:0}
+.who .nm{font-family:var(--serif);font-size:23px;line-height:1.5;letter-spacing:.06em;padding-bottom:6px}
+.who .rl{font-family:var(--serif);font-size:14px;letter-spacing:.06em;padding-bottom:16px}
+.who p{font-size:14px;line-height:1.95;padding-bottom:14px}
+.who .tag{font-size:13px;line-height:1.95;border-top:1px solid var(--gray);padding-top:14px;margin-top:4px}
 
 .scene{border-left:1px solid var(--gray);padding:4px 0 4px 24px;margin:0 0 26px;font-size:15px;line-height:2.1}
 .scene div{padding-bottom:2px}
@@ -78,6 +89,9 @@ ul li:before{content:"";position:absolute;left:0;top:15px;width:8px;height:1px;b
 .q .qt{font-family:var(--serif);font-size:19px;line-height:1.8;letter-spacing:.03em;padding-bottom:12px}
 .q .qw{font-size:14px;line-height:1.95}
 
+.cta{display:inline-block;border:1px solid var(--black);padding:17px 28px;margin-top:18px;font-size:14px;letter-spacing:.1em;color:inherit;text-decoration:none}
+.cta:hover{background:var(--black);color:var(--bg)}
+
 footer{padding:90px 0 120px;border-top:1px solid var(--gray);margin-top:20px}
 footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing:.06em}
 
@@ -88,12 +102,15 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
   .hero h1{font-size:28px}
   section{padding:60px 0}
   h2{font-size:22px}
+  h3{font-size:18px}
   .num{font-size:38px}
   .invert{padding:34px 24px}
   .invert .t{font-size:19px}
   .voice{font-size:17px}
   table{font-size:13px}
   .flow div{font-size:13px;padding:14px 4px}
+  .who{flex-direction:column;gap:16px}
+  .who img{width:104px;height:104px}
 }
 </style>
 </head>
@@ -114,6 +131,37 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
 
 <hr class="rule">
 
+<div class="wrap">
+<section>
+  <h2>今日、話す二人。</h2>
+
+  <div class="who">
+    <img src="kishimoto.jpg" alt="岸本渉">
+    <div class="b">
+      <div class="nm">岸本　渉</div>
+      <div class="rl">株式会社Oxymoron 代表</div>
+      <p>一橋大学を卒業後、博報堂、GU、ウィル・シードを経て、2025年にOxymoronを設立しました。立教大学大学院 経営学研究科 リーダーシップ開発コース（LDC）修了。理論と現場を行き来する<strong>アカデミック・プラクティショナー</strong>でありたいと思っています。</p>
+      <p><strong>創発の場を設計し、組織の変容に伴走する会社です。</strong>人材開発・組織開発の<strong>プロセスコンサルティング</strong>をしながら、なかでも<strong>パラドックスの真ん中に立たされているマネージャーの支援</strong>に力を入れています。</p>
+      <p>そして、今日のテーマでもある<strong>AI×創発</strong>。いま、いちばん関心があるところです。</p>
+      <div class="tag"><strong>パラドックスを、創造の入口に変える。</strong><br>矛盾を抱えたまま進むなかから、まだ名前のない物語が立ち上がる。<br>oxymoron.works</div>
+    </div>
+  </div>
+
+  <div class="who">
+    <img src="tahara.jpg" alt="田原真人">
+    <div class="b">
+      <div class="nm">田原　真人</div>
+      <div class="rl">複雑系研究者／ファシリテーター</div>
+      <p>1996年、細胞性粘菌の自己組織化を数学的に解析する修士論文を書いて以来、<strong>30年一貫して「部分から秩序が立ち上がる仕組み」</strong>を研究しています。現在も博士課程に在籍。</p>
+      <p>並行して、オンラインでの対話の場づくりを20年以上。2017年に『Zoomオンライン革命!』を出版しました。近年は、<strong>AIを対話の場に入れた「創発AX」</strong>を、LPガス会社の事業転換や運送会社の全社プロセス再構築など、複数の企業で実装しています。</p>
+      <div class="tag">物理学30年の研究と、企業での実装の両方から、<strong>「AI×対話から創発が生まれる仕組み」を原理として組み立ててきた人。</strong></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<hr class="rule">
+
 <div class="wrap"><div class="part"><span>前半　問題意識</span></div></div>
 
 <div class="wrap">
@@ -127,8 +175,6 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
     <div class="t">効率化とは、<br>もう答えが決まっている作業を、<br>速くすること。</div>
   </div>
   <p>だとすると——組織のいちばん重たい課題は、<strong>答えが決まっていない側</strong>にあるような気がします。</p>
-  <p class="lead"><strong>なぜ、そちら側には使われないんだろう。</strong></p>
-  <p>この問いに、今日は付き合っていただきたいと思っています。</p>
 </section>
 </div>
 
@@ -138,12 +184,13 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
 <section>
   <div class="num">02</div>
   <h2>そもそも、創発って何だろう。</h2>
-  <p>先に、言葉をひとつだけ置かせてください。</p>
+  <p>答えが決まっていない側で、組織がほしがっているもの。<strong>たぶんそれが「創発」と呼ばれているもの</strong>だと思います。</p>
+  <p>ただ、言葉としてはよく聞くけれど、何を指しているのか。まず、そこから。</p>
   <div class="invert">
     <div class="t sm">創発を、定義してみると——<br><br>異なる文脈がつながって、<br>新しい意味が立ち上がること。</div>
     <div class="n">誰かがすでに持っていた答えが出てくるのではなく、その場で、立ち上がってくるもの。</div>
   </div>
-  <p>会議で言えば、<strong>誰も言っていなかった三つ目の答えが出てくる</strong>ような瞬間です。優先順位をつけるのでも、あいだを取るのでもなく。</p>
+  <p>会議で言えば、<strong>誰も言っていなかった三つ目の答えが出てくる</strong>——そこから<strong>新しい知恵が生まれてくる</strong>ような瞬間です。優先順位をつけるのでも、あいだを取るのでもなく。</p>
 </section>
 </div>
 
@@ -154,8 +201,14 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
   <div class="num">03</div>
   <h2>しかもこれ、いま求められている。</h2>
   <p>既存事業だけでは、しんどい。現状維持では、難しい。だから新規事業をやろう、と言われる。そういう場面が増えているように思います。</p>
-  <p>探索と活用。成果と育成。利益と社会的意義。短期と長期。<br><strong>どちらも本当に大事なのに、同時には成り立たないもの</strong>の前で、決めなければならない。</p>
-  <p>つまりいま増えているのは、<strong>答えが決まっていない側の課題</strong>なのかもしれません。</p>
+  <p>新規事業。イノベーション。変革。——言い方は違っても、求められているのは同じことなんじゃないかと思います。<strong>まだ無い知恵が、自分たちの中から立ち上がってくること。</strong></p>
+
+  <h3>でも、これが難しい。</h3>
+  <p>探索と活用。成果と育成。利益と社会的意義。短期と長期。<br><strong>どちらも本当に大事なのに、同時には成り立たない。</strong>経営学では、こういう矛盾を<strong>パラドックス</strong>と呼びます。</p>
+  <p>ジレンマなら、選べば終わります。でも<strong>パラドックスは、選んでも終わらない。</strong>形を変えて、また戻ってくる。</p>
+  <p>だから本当は、どちらかを取るのではなく、<strong>両方を抱えたまま、まだ誰も見ていない三つ目を立ち上げるしかない。</strong>——つまり、創発が要る。</p>
+  <p class="lead">それなのに、<strong>いちばん創発が起きてほしいこの場所が、いちばん創発が起きにくい。</strong></p>
+  <div class="src">パラドックス理論／Smith, W. K., &amp; Lewis, M. W. (2011). Toward a theory of paradox: A dynamic equilibrium model of organizing. <em>Academy of Management Review</em>, 36(2), 381–403.</div>
 </section>
 </div>
 
@@ -166,7 +219,8 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
   <div class="num">04</div>
   <h2>では、あらためて。</h2>
   <p class="lead"><strong>なぜ、AIは創発のためには使われないんだろう。</strong></p>
-  <p>正直に言うと、私にも答えは分かりきっていません。ただ、現場に立ってきて、三つ見えているものがあります。</p>
+  <p>効率化には、あれだけ使われている。<strong>答えが決まっていない側にこそ、いちばん使いでがありそうなのに。</strong></p>
+  <p>正直に言うと、私にも答えは分かりきっていません。現場に正解が転がっているわけでもない。ただ、現場に立ってきたなかで、<strong>三つほど仮説が見えています。</strong></p>
 </section>
 </div>
 
@@ -176,8 +230,9 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
 <section>
   <div class="num">05</div>
   <h2>ひとつめ　機能を、知らない。</h2>
-  <p>そもそもAIとは何か。大量の文章を読んで、<strong>「こう来たら、こう続くのが確からしい」</strong>を出す装置だと聞いています。</p>
-  <p>だから放っておくと、<strong>「よくある続き」</strong>のほうに落ちていく。なんとなくそうだよね、という方向に丸まっていく。</p>
+  <p>そもそもAIとは何か。大量の文章を読んで、<strong>「こう来たら、こう続くのが確からしい」を読みながら進んでいく装置</strong>だと聞いています。</p>
+  <p>言いかえると、<strong>AIそのものが、巨大な轍（わだち）</strong>なのかもしれません。これまでに語られてきたことの、塊。</p>
+  <p>だから放っておくと、<strong>「よくある続き」</strong>——つまり轍のほうへ、落ちていく。なんとなくそうだよね、という方向に丸まっていく。</p>
   <p>ただ、丸まる理由はAIの側だけにあるのではなく、<strong>こちらが投げている問いの側</strong>にもありそうです。</p>
   <table>
     <tr><th>投げている問い</th><th>答えはどこに</th><th>何が起きるか</th></tr>
@@ -192,6 +247,7 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
     <div class="n">——パースが、アブダクション（仮説の跳躍）と呼んだもの。<br>新しい観念をもたらす唯一の推論だ、と言っています。</div>
   </div>
   <p>同じAIに、同じ材料を入れて、<strong>問いだけを変えている。</strong>それだけで、丸まりもするし、跳びもする。</p>
+  <div class="src">Peirce, C. S. (1903). Harvard Lectures on Pragmatism. <em>Collected Papers of Charles Sanders Peirce</em>, 5.172.「アブダクションとは説明仮説を形づくる過程である。それは、新しい観念をもたらす唯一の論理的操作である」</div>
 </section>
 </div>
 
@@ -222,28 +278,37 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
   <p><strong>AIが「場」に入ってくる、という感覚が、そもそもなかったんじゃないか。</strong></p>
 
   <h3>——では、一人とAIでは、創発は起きないのか。</h3>
-  <p>起きます。私自身、AIと一対一で、まさにこういうことをやっています。<strong>今日お話ししている内容も、AIとの往復のなかで見えてきたものです。</strong>条件を渡して、跳ばせて、また返す。それは確かに創発でした。</p>
-  <p>ただ、そこで立ち上がったのは <strong>「私の中の、新しさ」</strong>でした。</p>
+  <p>起きます。私自身、AIと一対一で、まさにこういうことをやっています。<strong>今日お話ししている内容も、AIとの往復のなかで見えてきたものです。</strong></p>
+  <ul>
+    <li>文脈を重ねながら、「ここで<strong>見えていないもの</strong>があるとしたら、何だろう」と聞く</li>
+    <li>「自分のこの考えと、この部分を<strong>重ね合わせたら</strong>、何が立ち上がるか」を一緒に見る</li>
+    <li>自分の内側の感情に、<strong>内省的に付き合ってもらう</strong>。そこから「そうか」が出てくる</li>
+    <li>アイデアそのものを、一緒に練る</li>
+  </ul>
+  <p>新しい知恵も、新しい視点も、たしかに出てきます。ただ——やっていることは、<strong>自分の中を掘っている</strong>、ということなのかもしれません。</p>
   <div class="invert">
     <div class="t sm">組織で必要なのは、<br>その場にいる人たちの中から<br>立ち上がってくるもの。</div>
     <div class="n">誰か一人が持ち帰ってきた答えでは、たぶん、組織は動かない。</div>
   </div>
-  <p>それに——<strong>組織の矛盾は、複数の人がいて初めて、場に現れます。</strong>スピードを大事にする人と、品質を守りたい人と、顧客を見ている人と、数字を背負っている人。<strong>一人の頭の中では、それはただのモヤモヤで終わってしまう。</strong></p>
+  <p>それに——<strong>組織の矛盾は、複数の人がいて初めて、場に現れます。</strong>スピードを大事にする人と、品質を守りたい人と、顧客を見ている人と、数字を背負っている人。</p>
+  <p>しかも大事なのは、意見そのものより<strong>その裏側にあるストーリー</strong>のほうです。なぜその人がそこを大事にしているのか。どんな文脈で、そう言っているのか。<strong>一人の頭の中では、それはただのモヤモヤで終わってしまう。</strong></p>
   <p>創発の材料になる矛盾は、<strong>人が集まったときにしか、テーブルの上に出てこない。</strong></p>
-  <p>そして、場のほうはどうなっているか。</p>
+
+  <h3>そして、場のほうはどうなっているか。</h3>
   <ul>
-    <li>文脈が、固まっている</li>
-    <li>声の強い人がいる</li>
-    <li>ランクの差がある</li>
+    <li>文脈が、固まっている——「うちはこういう会社だから」。<strong>固まってしまった、語り方そのもの</strong></li>
+    <li>声の強い人がいる／ランクの差がある</li>
     <li>言えない。出せない</li>
     <li>出しても、みんなで「うわっ」と何かが立ち上がる感じが、ない</li>
   </ul>
+  <p>話を重ねて新しいものを作っていきたいのに、<strong>それ自体が起きづらい構造になっている。</strong></p>
+  <p>AIの轍と、組織の轍。<strong>私たちはいま、轍に轍を重ねているのかもしれません。</strong></p>
   <p>そして、たぶんこれが一番大きい気がしています。</p>
   <div class="invert">
-    <div class="t">創発って、痛いんです。</div>
-    <div class="n">いつもだったら、バコバコ殴り合う。<br>そして、お互いに「しょうがない」で手打ちする。<br>——だから、開けないでおく。</div>
+    <div class="t">開けると、痛い。<br>だから結局、<br>落としどころに落ち着く。</div>
+    <div class="n">本当なら、けんけんがくがくやって、重ね合わせていきたい。<br>でも——ランクの強さがある。「言ってもしょうがない」がある。強い文脈を持った人が、勝っていく。<br>バチバチやったとしても、最後は「まあ、この辺で間を取りましょうか」に着地する。</div>
   </div>
-  <p>効率化のほうは、痛くない。だから通りやすいのかもしれません。</p>
+  <p>効率化のほうは、痛くない。バシバシ進む。だから通りやすいのかもしれません。</p>
   <p>矛盾が「資源」ではなく、「障害」に見えている。</p>
 </section>
 </div>
@@ -263,7 +328,6 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
   </div>
   <p><strong>いつもは痛かったことが、痛くなくなる。</strong></p>
   <p>言いにくかった声が出る。その場にいない人——顧客、現場、若手、次の世代——を呼べる。「実は自分も迷っている」を、人にではなく、いったんAIに置ける。</p>
-  <p>——ここは、私の実感と仮説です。<strong>田原さん、現場では実際、どうですか。</strong></p>
 </section>
 </div>
 
@@ -281,8 +345,19 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
     <div>収束・決定</div>
   </div>
   <p>この流れ自体は、AIがなくても回ります。ただ、<strong>その一つひとつの局面に、AIが静かに効いてくる。</strong></p>
-  <p>たとえば創発の局面。AIにリサーチや別の文脈を入れると、自分たちだけでは出てこなかった視点が立ち上がる。しかも、ただ広げるだけでもありません。<strong>「こういう制約のなかで」と条件を渡すと、その枠のなかでアイデアがブラッシュアップされていく。</strong>広げることと、質を上げること。その両方を、同じ流れで行き来できる。</p>
-  <p class="lead"><strong>そして、いちばんの難所が、ここです。</strong></p>
+
+  <h3>創発の局面で、していること。</h3>
+  <div class="flow">
+    <div>安全の器</div>
+    <div>拡散</div>
+    <div class="on">創発</div>
+    <div>収束・決定</div>
+  </div>
+  <p>ひとつは、<strong>文脈を重ね合わせること。</strong>何を言ったかだけでなく、<strong>どういう文脈でそう言っているのか</strong>まで場に出して、積み重ねていく。そのうえで「これを重ね合わせたら、何が立ち上がってくるだろう」と問う。</p>
+  <p>もうひとつは、<strong>制約を入れること。</strong>「こういう状況で、こうなっている。それも超えるとしたら、どうなるか」——前半で話した、<strong>答えを材料の外に追い出す</strong>やり方です。</p>
+  <p>文脈を重ねる。そこに、満たせない制約を入れる。<strong>この二つが揃うと、跳びやすくなる</strong>気がしています。</p>
+
+  <h3>そして、いちばんの難所が、ここです。</h3>
   <div class="flow">
     <div>安全の器</div>
     <div>拡散</div>
@@ -330,8 +405,23 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
 
 <div class="wrap">
 <section>
+  <h2>明日、ひとつだけ持ち帰るとしたら。</h2>
+  <div class="voice">
+    <div class="lab">この問いを、ひとつ</div>
+    「これはトレードオフに見えるけれど、<br>トレードオンにするとしたら、<br>どうなるだろう」
+  </div>
+  <p>AもBも本当に大事だとしたら、まだ誰も見ていないCは、立ち上がらないか。</p>
+  <p>AでもBでもなく、あいだを取るのでもなく。<strong>含んで、超える。</strong></p>
+  <p>パラドックスは、選んでも終わらない。だったら、<strong>両方を抱えたまま進むための問い</strong>をひとつ持っておく。</p>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
   <h2>田原さんに、聞いてみたいこと。</h2>
-  <p>ここまで話してきたことは、実は<strong>田原さんに教わったところも多くあります。</strong>そのうえで、あらためて聞いてみたいことが四つあります。</p>
+  <p>ここまでは、私の見立てです。実は、ここまで話してきたことは<strong>田原さんに教わったところも多くあります。</strong>そのうえで、あらためて聞いてみたいことが四つあります。</p>
 
   <div class="q">
     <div class="qn">01</div>
@@ -368,8 +458,17 @@ footer .f{font-family:var(--serif);font-size:13px;line-height:2.2;letter-spacing
     <div class="t">同じ道具が、<br>轍を深める機械にも、<br>轍をゆるめる機械にもなる。</div>
     <div class="n">分かれ目は、機能と、原理の理解。</div>
   </div>
-  <p>そして、ここまで話してきたことは、<strong>聞いて分かることと、体で分かることが、はっきり別もの</strong>でした。</p>
-  <p>意見が外に出て、場の空気がすっと変わるあの瞬間は、体験して初めて、自分の手で使えるものになる。だから9月26日は、一日かけて、実際に手を動かす場にしています。</p>
+</section>
+</div>
+
+<hr class="rule">
+
+<div class="wrap">
+<section>
+  <h2 id="join">体験できる場を、用意しました。</h2>
+  <p>意見が外に出て、場の空気がすっと変わるあの瞬間は、体験して初めて、自分の手で使えるものになる。<strong>だから9月26日は、一日かけて、実際に手を動かす場にしています。</strong></p>
+  <p>それともうひとつ。<strong>今日のこの対話も、終われば流れて消えていきます。</strong>9月26日は、対話を残して、そこからAIが知恵を引き出せる“器”を組むところまでやります。Obsidianという道具を使います。</p>
+  <a class="cta" href="https://sho2437.github.io/oxymoron-ws-lp/" target="_blank" rel="noopener">&#9656;　9月26日ワークショップの詳細・お申し込み</a>
 </section>
 </div>
 
